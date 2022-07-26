@@ -1,0 +1,20 @@
+{
+    "name": "file-handler",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "dev": "sls offline"
+    },
+    "dependencies": {
+        "aws-sdk": "2.1181.0",
+        "sharp": "0.30.7"
+    },
+    "devDependencies": {
+        "@serverless/utils": "6.7.0",
+        "@types/sharp": "0.30.4",
+        "serverless-dotenv-plugin": "4.0.1",
+        "serverless-offline": "9.0.0",
+        "serverless-plugin-typescript": "2.1.2",
+        "typescript": "4.7.4"
+    }
+}

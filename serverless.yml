@@ -1,0 +1,26 @@
+org: abeltyr
+app: file-handler
+service: file-handler
+frameworkVersion: "3"
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  environment:
+    AWS_ACCESS_KEY_ID_FOR_MEMUSIC: ${env:AWS_ACCESS_KEY_ID_FOR_MEMUSIC}
+    AWS_SECRET_ACCESS_KEY_FOR_MEMUSIC: ${env:AWS_SECRET_ACCESS_KEY_FOR_MEMUSIC}
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin
+
+functions:
+  api:
+    handler: src/handler.handler
+    events:
+      - httpApi:
+          path: /file/{buffer}
+          method: get
